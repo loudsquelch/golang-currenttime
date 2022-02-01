@@ -2,17 +2,15 @@ package app
 
 import (
 	"encoding/json"
-	// "fmt"
 	"net/http"
 	"strings"
 	"time"
-	//"github.com/gorilla/mux"
 )
 
 const timeFormat = "2006-01-02 15:04:05 -0700 MST"
 
-type currentTimeDto struct{
-	Time		string		`json:"current_time"`
+type currentTimeDto struct {
+	Time string `json:"current_time"`
 }
 
 func now(w http.ResponseWriter, r *http.Request) {
@@ -41,4 +39,4 @@ func now(w http.ResponseWriter, r *http.Request) {
 		enc.Encode(currentTimeDto{Time: times[tzq]})
 	}
 
-} 
+}
